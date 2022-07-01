@@ -19,7 +19,6 @@ jobs:
     - name: download-and-minify
       run: |
         npm install -g luamin
-        git pull
         luamin -f ./source.luau > ./source
 
     - uses: EndBug/add-and-commit@v9
