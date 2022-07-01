@@ -18,7 +18,7 @@ jobs:
 
     - name: download-and-minify
       run: |
-        npm install luamin
+        npm install -g luamin
         git pull
         luamin -f ./source.luau > ./source
 
