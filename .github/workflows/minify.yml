@@ -1,0 +1,31 @@
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - .github/workflows/minify.yml
+    - '*.luau'
+
+jobs:
+  luamin:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: actions/setup-node@v3
+      with:
+        node-version: latest
+        cache: 'npm'
+
+    - name: download-and-minify
+      run: |
+        npm install luamin
+        git pull
+        luamin -f ./source.luau > ./source
+
+    - uses: EndBug/add-and-commit@v9
+      with:
+        add: "."
+        message: Minify source files
+        committer_name: GitHub Actions
+        committer_email: actions@github.com
