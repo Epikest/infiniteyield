@@ -1,0 +1,11 @@
+{
+   "name": "minify",
+   "version": "1.0.0",
+   "scripts": {
+      "minify": "node ./.github/workflows/minify.js"
+   },
+   "devDependencies": {
+      "luamin": "latest",
+      "fs": "latest"
+   }
+}
