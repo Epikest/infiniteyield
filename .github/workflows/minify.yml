@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-    - master
+    - min
     paths:
     - .github/workflows/minify.yml
     - .darklua.json5
