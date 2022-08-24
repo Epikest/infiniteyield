@@ -1,5 +1,8 @@
 {
-	generator: { name: "dense", column_span: 10000000000 },
+	generator: {
+		name: "dense",
+		column_span: 10000000000
+	},
 	rules: [
 		"remove_spaces",
 		"compute_expression",
