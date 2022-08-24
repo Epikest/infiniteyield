@@ -1,0 +1,28 @@
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - .github/workflows/minify.yml
+    - .darklua.json5
+    - source
+
+jobs:
+  darklua:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: download-and-format
+      run: |
+        wget -O darklua-linux.zip https://gitlab.com/seaofvoices/darklua/uploads/1676420b7bdac9ff4ba261c5edf0ae2c/darklua-0.8.0-linux.zip
+        unzip -o darklua-linux.zip
+        chmod +x ./darklua
+        git pull
+        ./darklua process source source.min
+
+    - uses: EndBug/add-and-commit@v9
+      with:
+        add: "source.min"
+        message: Minify source files
+        committer_name: GitHub Actions
+        committer_email: actions@github.com

@@ -1,0 +1,17 @@
+{
+	generator: { name: "dense", column_span: 10000000000 },
+	rules: [
+		"remove_spaces",
+		"compute_expression",
+		"remove_unused_if_branch",
+		"remove_unused_while",
+		"rename_variables",
+		"remove_empty_do",
+		"remove_function_call_parens",
+		"remove_nil_declaration",
+		"convert_index_to_field",
+		"group_local_assignment",
+		"filter_after_early_return",
+		"convert_local_function_to_assign"
+	]
+}
