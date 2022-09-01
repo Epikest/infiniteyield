@@ -1,4 +1,8 @@
 on:
+  workflow_run:
+    workflows: [Sync fork]
+    types:
+    - completed
   push:
     branches:
     - min
