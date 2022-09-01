@@ -1,21 +1,12 @@
-name: Sync Fork
-
+name: Sync fork
 on:
   schedule:
-    - cron: '*/5 * * * *' # every 5 minutes
-  workflow_dispatch: # on button click
-  push:
-    branches:
-    - min
-    paths:
-    - .github/workflows/sync.yml
+  - cron: "*/5 * * * *"
 
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: tgymnich/fork-sync@v1.4
-        with:
-          owner: Epikest
-          base: min
-          head: master
+    - run: gh repo sync Epikest/infiniteyield
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
