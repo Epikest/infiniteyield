@@ -11,6 +11,6 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-    - run: gh repo sync Epikest/infiniteyield
+    - run: gh repo sync Epikest/infiniteyield -b min
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
