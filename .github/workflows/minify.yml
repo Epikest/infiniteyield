@@ -1,3 +1,5 @@
+name: Minify source files
+
 on:
   workflow_run:
     workflows: [Sync fork]

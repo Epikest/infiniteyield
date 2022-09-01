@@ -1,12 +1,14 @@
 name: Sync fork
+
 on:
   schedule:
-  - cron: '*/5 * * * *'
+  - cron: "0 * * * *"
   push:
     branches:
     - min
     paths:
     - .github/workflows/sync.yml
+
 jobs:
   sync:
     runs-on: ubuntu-latest
