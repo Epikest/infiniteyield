@@ -24,11 +24,11 @@ jobs:
         unzip -o darklua-linux.zip
         chmod +x ./darklua
         git pull
-        ./darklua process source source.min
+        ./darklua process source source.min.luau
 
     - uses: EndBug/add-and-commit@v9
       with:
-        add: "source.min"
+        add: source.min.luau
         message: Minify source files
         committer_name: GitHub Actions
         committer_email: actions@github.com
