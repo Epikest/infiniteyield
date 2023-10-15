@@ -2,7 +2,7 @@ name: Sync fork
 
 on:
   schedule:
-  - cron: "0 * * * *"
+  - cron: "*/5 * * * *"
   push:
     branches:
     - min
@@ -13,6 +13,8 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-    - run: gh repo sync Epikest/infiniteyield -b min
+    - uses: actions/checkout@v3
+    - run: gh repo sync
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ github.token }}
+    - uses: gautamkrishnar/keepalive-workflow@v1
