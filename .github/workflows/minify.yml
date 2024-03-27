@@ -20,7 +20,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: download-and-format
       run: |
-        wget -O darklua-linux.zip https://gitlab.com/seaofvoices/darklua/uploads/1676420b7bdac9ff4ba261c5edf0ae2c/darklua-0.8.0-linux.zip
+        wget -O darklua-linux.zip https://github.com/seaofvoices/darklua/releases/latest/download/darklua-linux-x86_64.zip
         unzip -o darklua-linux.zip
         chmod +x ./darklua
         git pull
